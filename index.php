@@ -12,10 +12,32 @@
 
 	*/
 
-	$root = new Usuario();
+	/*
+		Exemplo 2 - Carrega 1 usuário
+		$root = new Usuario();
+		$root->loadByID(3);
+		echo $root;
+	*/
 
-	$root->loadByID(3);
+	/*
+		Exemplo 3
+		Carrega uma lista de usuários.
+		$lista = Usuario::getList();
 
-	echo $root;
+		echo json_encode($lista);
+	*/
+	
+	/*
+		Carrega uma lista de usuários buscando pelo login
+		$search = Usuario::search("jo");
+		echo json_encode($search);
+	*/
+
+	/*
+		Carrega um usuário usando o login e senha
+	*/
+	$usuario = new Usuario();
+	$usuario->login("root","!@#$%");
+	echo $usuario;
 
 ?>
