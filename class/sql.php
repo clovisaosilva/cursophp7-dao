@@ -28,6 +28,7 @@
 		}
 
 		/*
+			Faz o bindParam da query, optou or ser utilizado dessa forma pois pode ser utilizado por outros méodos no futuro.
 			$statment - recebe o $stmt principal para a preparação da query
 			$key - o nome do indice do parâmetro que serpa utilizado na query (:LOGIN)
 			$value - o valor a ser inserido no indice específico.
@@ -60,7 +61,6 @@
 
 		public function select($rowQuery, $params = array()):array
 		{
-			var_dump($params);
 
 			$stmt = $this->query($rowQuery, $params);
 
