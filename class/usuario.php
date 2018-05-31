@@ -103,6 +103,19 @@
 				$this->setData($results[0]);
 			}
 		}
+		public function delete(){
+			$sql = new Sql();
+
+			$sql->query("DELETE FROM tb_usuarios WHERE idusuario = :ID", array(
+				':ID'=>$this->getIdusuario()
+			));
+
+			$this->setIdUsuario(0);
+			$this->setDeslogin("");
+			$this->setDessenha("");
+			$this->setDtcadastro(new DateTime());
+
+		}
 
 		public function update($login,$password){
 
