@@ -35,9 +35,22 @@
 
 	/*
 		Carrega um usuário usando o login e senha
+		$usuario = new Usuario();
+		$usuario->login("root","!@#$%");
+		echo $usuario;
+	*/
+	
+	/*
+		Cria um novo usuário no banco
+		$aluno = new Usuario("aluno2","@lun02");
+		$aluno->insert();
+		echo $aluno;
 	*/
 	$usuario = new Usuario();
-	$usuario->login("root","!@#$%");
-	echo $usuario;
 
+	$usuario->loadByID(6);
+
+	$usuario->update("Clóvis", "teste");
+
+	echo $usuario;
 ?>
